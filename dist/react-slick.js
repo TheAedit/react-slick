@@ -299,9 +299,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { className: className },
 	        newChildren
 	      );
-	    } else if (newChildren.length <= settings.slidesToShow) {
-	      settings.unslick = true;
 	    }
+	    // else if (newChildren.length < settings.slidesToShow) {
+	    //   debugger
+	    //   settings.unslick = true;
+	    // }
 	    return _react2.default.createElement(
 	      _innerSlider.InnerSlider,
 	      _extends({ ref: this.innerSliderRefHandler }, settings),
@@ -2667,7 +2669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var prevClasses = { "slick-arrow": true, "slick-prev": true };
 	    var prevHandler = this.clickHandler.bind(this, { message: "previous" });
 
-	    if (!this.props.infinite && (this.props.currentSlide === 0 || this.props.slideCount <= this.props.slidesToShow)) {
+	    if (!this.props.infinite && this.props.currentSlide === 0) {
 	      prevClasses["slick-disabled"] = true;
 	      prevHandler = null;
 	    }
